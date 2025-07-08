@@ -33,39 +33,41 @@
   <title>Til Death Studio – Coming Soon</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('/img/gradient-background.png') no-repeat center center;
-  background-size: cover;
-  color: #1e1d19;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  padding: 5rem 1.5rem 2rem; /* More vertical space for desktop */
-}
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('/img/gradient-background.png') no-repeat center center;
+      background-size: cover;
+      color: #1e1d19;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
 
+    .container {
+      max-width: 600px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-.container {
-  max-width: 600px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-h1 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #303036;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-}
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #303036;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0;
+    }
 
     .mobile-break {
       display: none;
@@ -76,7 +78,7 @@ h1 {
       max-width: 85vw;
       min-width: 200px;
       margin-top: 1rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       opacity: 0;
       animation: fadeUp 1.2s ease-out forwards, popBounce 0.8s ease-out 1.2s forwards;
     }
@@ -136,7 +138,7 @@ h1 {
 
     .heart-icon {
       width: 28px;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       margin-bottom: 2rem;
       animation: heartbeat 1.5s infinite;
       transform-origin: center;
@@ -151,48 +153,41 @@ h1 {
     }
 
     @media (max-width: 480px) {
-  body {
-    padding: 2.5rem 1rem 1.5rem; /* tighter vertical spacing for mobile */
-  }
+      h1 {
+        font-size: 0.9rem;
+      }
 
-  h1 {
-    font-size: 0.9rem;
-    margin-top: 1.5rem;
-  }
+      .logo {
+        width: 220px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
 
-  .logo {
-    width: 220px;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-  }
+      .descriptor,
+      .services {
+        font-size: 0.65rem;
+      }
 
-  .descriptor,
-  .services {
-    font-size: 0.65rem;
-  }
+      .cta {
+        font-size: 0.95rem;
+      }
 
-  .heart-icon {
-    width: 24px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
+      .heart-icon {
+        width: 24px;
+      }
 
-  .cta {
-    font-size: 0.95rem;
-  }
+      .socials {
+        gap: 1rem;
+      }
 
-  .socials {
-    gap: 1rem;
-  }
+      .socials a {
+        font-size: 0.65rem;
+      }
 
-  .socials a {
-    font-size: 0.65rem;
-  }
-
-  .mobile-break {
-    display: inline;
-  }
-}
+      .mobile-break {
+        display: inline;
+      }
+    }
   </style>
 </head>
 
