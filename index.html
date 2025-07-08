@@ -132,8 +132,8 @@
 
   .heart-icon {
     width: 28px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     animation: heartbeat 1.5s infinite;
     transform-origin: center;
   }
@@ -211,10 +211,11 @@
   text-align: center;
   color: #1e1d19;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
+
 
 .message {
   font-family: 'Poppins', sans-serif;
@@ -263,6 +264,10 @@
     .mobile-break {
       display: inline;
     }
+
+    form {
+  padding: 1.5em 1em;
+}
 
     .form-row {
       flex-direction: column;
