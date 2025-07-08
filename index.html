@@ -57,6 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2rem;
     gap: 1.5rem;
   }
 
@@ -115,7 +116,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.25rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 
   .socials a {
@@ -131,7 +132,7 @@
   }
 
   .heart-icon {
-    width: 28px;
+    width: 20px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     animation: heartbeat 1.5s infinite;
@@ -209,7 +210,7 @@
   p.form-note {
   font-size: 0.75rem;
   text-align: center;
-  color: #1e1d19;
+  color: #707070;
   margin: 0;
   white-space: normal;
   overflow: visible;
@@ -285,14 +286,15 @@
 
 <body>
   <div class="container">
-    <h1>Website Under Construction <span class="mobile-break"><br></span>Launching August 2025</h1>
+    <h1>Website Under Construction<br></span>Launching August 2025</h1>
     <img src="/img/main-logo.svg" alt="Til Death Studio floral logo" class="logo" />
     <p class="descriptor">Florist Studio located on <span class="mobile-break"><br></span> Sydney’s Northern Beaches</p>
-    <p class="services">Hand delivered bouquets, subscriptions,<span class="mobile-break"><br></span>events, & handcrafted ceramics.</p>
+    <p class="services">Hand delivered bouquets, subscriptions,<span class="mobile-break"><br></span> events, & handcrafted ceramics.</p>
     <img src="/img/heart.svg?v=2" alt="Animated heart icon for Til Death Studio" class="heart-icon" />
     <!-- ✉️ FORM SECTION -->
     <form id="signup-form">
       <h2>FOLLOW US TO BE THE FIRST TO SMELL THE ROSES</h2>
+      <p class="form-note">We’ll only email you when something beautiful is blooming. No spam ever.</p>
       <div class="form-row">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
@@ -303,7 +305,7 @@
 
       </div>
       <input type="submit" value="Sign Up" />
-      <p class="form-note">We’ll only email you when something beautiful is blooming. No spam ever.</p>
+      
       <div id="form-message" class="message"></div>
     </form>
 
