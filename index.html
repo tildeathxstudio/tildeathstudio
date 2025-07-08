@@ -291,6 +291,11 @@
       <div class="form-row">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
+        <input type="hidden" name="utm_source" />
+        <input type="hidden" name="utm_medium" />
+        <input type="hidden" name="utm_campaign" />
+        <input type="hidden" name="utm_content" />
+
       </div>
       <input type="submit" value="Sign Up" />
       <p class="form-note">We’ll only email you when something beautiful is blooming. No spam ever.</p>
@@ -310,6 +315,17 @@
   <script>
     const form = document.getElementById("signup-form");
     const message = document.getElementById("form-message");
+
+    const urlParams = new URLSearchParams(window.location.search);
+  const utmFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+
+  utmFields.forEach(param => {
+    const input = document.querySelector(`input[name="${param}"]`);
+    if (input && urlParams.get(param)) {
+      input.value = urlParams.get(param);
+    }
+  });
+
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
