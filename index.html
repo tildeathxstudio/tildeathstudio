@@ -32,44 +32,250 @@
 
   <title>Til Death Studio – Coming Soon</title>
 
-  <style>
-    /* Existing styles unchanged for brevity */
+ <style>
+  * {
+    box-sizing: border-box;
+  }
 
-    .signup-form {
-      display: flex;
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('/img/gradient-background.png') no-repeat center center;
+    background-size: cover;
+    color: #1e1d19;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .container {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e1d19;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .mobile-break {
+    display: none;
+  }
+
+  .logo {
+    width: 320px;
+    max-width: 85vw;
+    min-width: 200px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out forwards, popBounce 0.8s ease-out 1.2s forwards;
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .descriptor {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .services {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .socials a {
+    text-decoration: none;
+    font-family: 'Geist Mono', monospace;
+    color: #1e1d19;
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+
+  .socials a:hover {
+    text-decoration: underline;
+  }
+
+  .heart-icon {
+    width: 28px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    animation: heartbeat 1.5s infinite;
+    transform-origin: center;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+  }
+
+  form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #edbac9;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  width: 100%;
+  max-width: 600px; /* was 500px */
+  font-family: 'Geist Mono', monospace;
+  margin-top: 1rem;
+}
+
+  h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: #E57396;
+    font-family: 'Geist', sans-serif;
+    align-self: center;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  .form-row input {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 1em;
+    font-size: 0.85rem;
+    border: 1px solid #1e1d19;
+    border-radius: 6px;
+    width: 100%;
+    background: #fff;
+  }
+
+  input[type="submit"] {
+    background-color: #E57396;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: background-color 0.2s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #d95881;
+  }
+
+  p.form-note {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #1e1d19;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+  .success {
+    color: #1e1d19;
+  }
+
+  .error {
+    color: #bb5e78;
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 0.9rem;
+    }
+
+    .logo {
+      width: 220px;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .descriptor,
+    .services {
+      font-size: 0.65rem;
+    }
+
+    .heart-icon {
+      width: 24px;
+    }
+
+    .socials {
+      gap: 1rem;
+    }
+
+    .socials a {
+      font-size: 0.65rem;
+    }
+
+    .mobile-break {
+      display: inline;
+    }
+
+    .form-row {
       flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      width: 100%;
-      max-width: 400px;
     }
 
-    .signup-form input[type="text"],
-    .signup-form input[type="email"] {
-      padding: 0.75em;
-      font-size: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: 'Geist Mono', monospace;
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+      font-size: 0.85rem;
     }
+  }
+</style>
 
-    .signup-form input[type="submit"] {
-      background-color: #E57396;
-      color: white;
-      padding: 0.75em 1em;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      font-family: 'Geist Mono', monospace;
-    }
-
-    .signup-message {
-      font-size: 0.75rem;
-      text-align: center;
-      color: #888;
-    }
-  </style>
 </head>
 
 <body>
@@ -79,17 +285,19 @@
     <p class="descriptor">Florist Studio located on <span class="mobile-break"><br></span> Sydney’s Northern Beaches</p>
     <p class="services">Hand delivered bouquets, subscriptions,<span class="mobile-break"><br></span>events, & handcrafted ceramics.</p>
     <img src="/img/heart.svg?v=2" alt="Animated heart icon for Til Death Studio" class="heart-icon" />
-    <p class="cta">FOLLOW US TO BE THE FIRST<span class="mobile-break"><br></span> TO SMELL THE ROSES</p>
-
-    <!-- SIGNUP FORM START -->
-    <form id="signup-form" class="signup-form">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
+    <!-- ✉️ FORM SECTION -->
+    <form id="signup-form">
+      <h2>FOLLOW US TO BE THE FIRST TO SMELL THE ROSES</h2>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+      </div>
       <input type="submit" value="Sign Up" />
-      <p id="form-message" class="signup-message">We’ll only email you when something beautiful is blooming. No spam ever.</p>
+      <p class="form-note">We’ll only email you when something beautiful is blooming. No spam ever.</p>
+      <div id="form-message" class="message"></div>
     </form>
-    <!-- SIGNUP FORM END -->
 
+    <!-- Social Links -->
     <div class="socials">
       <a href="https://instagram.com/tildeathxstudio?utm_source=launchpage&utm_medium=link&utm_campaign=launch2025&utm_content=instagram-footer" target="_blank">Instagram</a>
       <a href="https://facebook.com/profile.php?id=655145101024061&utm_source=launchpage&utm_medium=link&utm_campaign=launch2025&utm_content=facebook-footer" target="_blank">Facebook</a>
@@ -100,16 +308,6 @@
   </div>
 
   <script>
-    function getUTMParams() {
-      const params = new URLSearchParams(window.location.search);
-      return {
-        utm_source: params.get('utm_source') || '',
-        utm_medium: params.get('utm_medium') || '',
-        utm_campaign: params.get('utm_campaign') || '',
-        utm_content: params.get('utm_content') || ''
-      };
-    }
-
     const form = document.getElementById("signup-form");
     const message = document.getElementById("form-message");
 
@@ -117,10 +315,6 @@
       e.preventDefault();
 
       const formData = new FormData(form);
-      const utms = getUTMParams();
-      for (const [key, value] of Object.entries(utms)) {
-        formData.append(key, value);
-      }
 
       fetch("https://script.google.com/macros/s/AKfycbw0ujVvAlA74VU4nTPQyqdkyWAmzyMP_0ccEwzTGFVGCli71yh0vpJm0DwGm77UGm_e5Q/exec", {
         method: "POST",
@@ -129,7 +323,7 @@
       .then(response => {
         if (response.ok) {
           message.textContent = "You're on the list – thanks!";
-          message.className = "signup-message success";
+          message.className = "message success";
           form.reset();
 
           if (typeof gtag === "function") {
@@ -145,7 +339,7 @@
       })
       .catch(error => {
         message.textContent = "Something went wrong. Please try again.";
-        message.className = "signup-message error";
+        message.className = "message error";
         console.error(error);
       });
     });
